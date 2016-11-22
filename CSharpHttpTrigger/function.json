@@ -1,0 +1,17 @@
+{
+    "disabled": true,
+    "bindings": [
+        {
+            "name": "httpTrigger",
+            "type": "httpTrigger",
+            "direction": "in",
+            "authLevel": "function",
+            "route": "csharphttptrigger/{id}/{activearg:bool?}"
+        },
+        {
+            "name": "httpOut",
+            "type": "http",
+            "direction": "out"
+        }
+    ]
+}
