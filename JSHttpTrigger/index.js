@@ -4,7 +4,7 @@ module.exports = function(context, req) {
 
     context.res = {
         status: 200,
-        body: `Id ${req.query.id} ${ req.query.activearg || true }`
+        body: `Id ${req.params.id} ${ req.params.activearg || true }`
     }
 
     context.done();
