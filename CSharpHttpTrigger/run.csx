@@ -7,6 +7,5 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage httpTrigger
 {
     log.Info($"CSharpHttpTrigger invoked. RequestUri={httpTrigger.RequestUri}");
     bool active = activearg ?? false;
-
     return httpTrigger.CreateResponse(HttpStatusCode.OK, $"Id: {id} Active: {active}");
 }
