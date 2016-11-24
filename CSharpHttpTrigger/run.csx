@@ -13,7 +13,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage httpTrigger
     StringBuilder responseContent = new StringBuilder($"Id: {id} Active: {active}");
     var currentClaimsPrincipal = ClaimsPrincipal.Current;
     if(currentClaimsPrincipal != null) {
-        responseContent.Append($"Oh Hi {currentClaimsPrincipal.ToString()}");
+        responseContent.Append($"Oh, Hey {currentClaimsPrincipal.Identity.Name}.");
     } else {
         responseContent.Append($"{System.Environment.NewLine}I don't know you.");
     }
