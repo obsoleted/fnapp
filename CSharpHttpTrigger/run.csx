@@ -10,12 +10,13 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage httpTrigger
 {
     log.Info($"CSharpHttpTrigger invoked. RequestUri={httpTrigger.RequestUri}");
     bool active = activearg ?? false;
-    StringBuilder responseContent = new StringBuilder($"Id: {id} Active: {active}");
     var currentClaimsPrincipal = ClaimsPrincipal.Current;
+    List<string> responseContentStrings = new List<string>();
+    responseContentStrings.Add($"Id: {id} Active: {active}");
     if(currentClaimsPrincipal.Identity.IsAuthenticated) {
-        responseContent.Append($"Oh, Hey {currentClaimsPrincipal.Identity.Name}.");
+        responseContentStrings.Add($"Oh, Hey {currentClaimsPrincipal.Identity.Name}.");
     } else {
-        responseContent.Append($"{System.Environment.NewLine}I don't know you.");
+        responseContentStrings.Add($"I don't know you.");
     }
-    return httpTrigger.CreateResponse(HttpStatusCode.OK, responseContent.ToString());
+    return httpTrigger.CreateResponse(HttpStatusCode.OK, responseContentStrings);
 }
