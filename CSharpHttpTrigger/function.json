@@ -5,7 +5,7 @@
             "name": "httpTrigger",
             "type": "httpTrigger",
             "direction": "in",
-            "authLevel": "function",
+            "authLevel": "anonymous",
             "route": "csharphttptrigger/{id}/{activearg:bool?}"
         },
         {
