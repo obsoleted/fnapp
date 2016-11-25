@@ -1,0 +1,17 @@
+{
+    "disabled": false,
+    "bindings": [
+        {
+            "name": "httpTrigger",
+            "type": "httpTrigger",
+            "direction": "in",
+            "authLevel": "admin",
+            "route": "csharpecho"
+        },
+        {
+            "name": "httpOut",
+            "type": "http",
+            "direction": "out"
+        }
+    ]
+}
