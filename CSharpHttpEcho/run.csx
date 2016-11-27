@@ -18,6 +18,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
             RequestUri = req.RequestUri,
             Method = req.Method,
             Headers = req.Headers,
+            Cookies = req.Headers.GetCookies(),
             QueryNVPairs = req.GetQueryNameValuePairs(),
             Content = new {
                 Headers = req.Content.Headers,
