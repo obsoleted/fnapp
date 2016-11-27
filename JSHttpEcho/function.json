@@ -1,0 +1,17 @@
+{
+    "disabled": false,
+    "bindings": [
+        {
+            "name": "req",
+            "type": "httpTrigger",
+            "direction": "in",
+            "authLevel": "admin",
+            "route": "jsecho"
+        },
+        {
+            "name": "httpOut",
+            "type": "http",
+            "direction": "out"
+        }
+    ]
+}
